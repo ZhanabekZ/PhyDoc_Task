@@ -1,9 +1,4 @@
-//
-//  FinalView.swift
-//  PhyDoc_Task
-//
-//  Created by ZhZinekenov on 13.10.2023.
-//
+
 
 import SwiftUI
 
@@ -42,7 +37,8 @@ struct FinalView: View {
                         .foregroundColor(Color("darkBlue"))
                 }
             }
-        }
+        }.navigationBarBackButtonHidden()
+        
     }
 }
 

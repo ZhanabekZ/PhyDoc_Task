@@ -1,11 +1,12 @@
-//
-//  APICaller.swift
-//  PhyDoc_Task
-//
-//  Created by ZhZinekenov on 13.10.2023.
-//
+
 
 import Foundation
+
+enum AppointmentError: Error {
+    case invalidEncoding
+    case invalidURL
+}
+
 enum NetworkError: Error {
     case urlError
     case canNotParseData
@@ -28,7 +29,6 @@ public class APICaller {
                 }
                 
                 let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 
                 let resultData = try decoder.decode(TimeSlots.self, from: data)
                 completionHandler(.success(resultData))

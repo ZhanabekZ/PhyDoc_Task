@@ -1,9 +1,3 @@
-//
-//  OrderFormatView.swift
-//  PhyDoc_Task
-//
-//  Created by ZhZinekenov on 09.10.2023.
-//
 
 import SwiftUI
 
@@ -37,6 +31,8 @@ struct OrderFormatView: View {
                                 isOnlineOptionSelected = true
                                 isClinicOptionSelected = false
                                 isHomeOptionSelected = false
+                                UserDefaults.standard.setValue(orderForm, forKey: "orderForm")
+
                             }
                         })
                     
@@ -48,6 +44,8 @@ struct OrderFormatView: View {
                                 isOnlineOptionSelected = false
                                 isClinicOptionSelected = true
                                 isHomeOptionSelected = false
+                                UserDefaults.standard.setValue(orderForm, forKey: "orderForm")
+
                             }
                         })
                     
@@ -59,13 +57,17 @@ struct OrderFormatView: View {
                                 isOnlineOptionSelected = false
                                 isClinicOptionSelected = false
                                 isHomeOptionSelected = true
+                                UserDefaults.standard.setValue(orderForm, forKey: "orderForm")
+
                             }
                         })
                 }
                 Spacer()
                 HStack {
                     BackButton(tapped: $isBackButtonTapped)
-                    GoToNextPageButton(isNextActionAllowed: $isAnyOptionSelected, isTapped: $isNextButtonTapped)
+                    GoToNextPageButton(isNextActionAllowed: $isAnyOptionSelected, isTapped: $isNextButtonTapped) {
+                        print(orderForm)
+                    }
                 }
             .navigationDestination(isPresented: $isNextButtonTapped) {
                 OrderPersonView()

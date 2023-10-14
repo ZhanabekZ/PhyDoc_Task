@@ -23,6 +23,13 @@
 		D8388D242AD4231A0038A92E /* OrderPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388D232AD4231A0038A92E /* OrderPersonView.swift */; };
 		D8388D262AD42CE00038A92E /* OrderTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388D252AD42CE00038A92E /* OrderTimeView.swift */; };
 		D8388D282AD46D0D0038A92E /* GoToNextPageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388D272AD46D0D0038A92E /* GoToNextPageButton.swift */; };
+		D88659ED2ADAE00800031310 /* DoctorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88659EC2ADAE00800031310 /* DoctorInfoView.swift */; };
+		D88659EF2ADAE53700031310 /* OrderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88659EE2ADAE53700031310 /* OrderDetailsView.swift */; };
+		D88659F12ADAFBA100031310 /* FinalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88659F02ADAFBA100031310 /* FinalButton.swift */; };
+		D88659F42ADB060400031310 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88659F32ADB060400031310 /* Appointment.swift */; };
+		D88659F62ADB083300031310 /* FinalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88659F52ADB083300031310 /* FinalMessage.swift */; };
+		D8984EF22ADA9EC700CD65D1 /* ShowMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8984EF12ADA9EC700CD65D1 /* ShowMoreButton.swift */; };
+		D8984EF42ADAB5CE00CD65D1 /* TimeSlotDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8984EF32ADAB5CE00CD65D1 /* TimeSlotDateFormatter.swift */; };
 		D8C35FCF2AD6D28B00BA0E56 /* PersonInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C35FCE2AD6D28B00BA0E56 /* PersonInfoView.swift */; };
 		D8C35FD12AD6D3FA00BA0E56 /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C35FD02AD6D3FA00BA0E56 /* PersonData.swift */; };
 		D8E0FDDC2AD70CD800A428BD /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E0FDDB2AD70CD800A428BD /* BackButton.swift */; };
@@ -54,6 +61,13 @@
 		D8388D232AD4231A0038A92E /* OrderPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPersonView.swift; sourceTree = "<group>"; };
 		D8388D252AD42CE00038A92E /* OrderTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTimeView.swift; sourceTree = "<group>"; };
 		D8388D272AD46D0D0038A92E /* GoToNextPageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToNextPageButton.swift; sourceTree = "<group>"; };
+		D88659EC2ADAE00800031310 /* DoctorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInfoView.swift; sourceTree = "<group>"; };
+		D88659EE2ADAE53700031310 /* OrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsView.swift; sourceTree = "<group>"; };
+		D88659F02ADAFBA100031310 /* FinalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalButton.swift; sourceTree = "<group>"; };
+		D88659F32ADB060400031310 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = SOURCE_ROOT; };
+		D88659F52ADB083300031310 /* FinalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalMessage.swift; sourceTree = SOURCE_ROOT; };
+		D8984EF12ADA9EC700CD65D1 /* ShowMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreButton.swift; sourceTree = SOURCE_ROOT; };
+		D8984EF32ADAB5CE00CD65D1 /* TimeSlotDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotDateFormatter.swift; sourceTree = "<group>"; };
 		D8C35FCE2AD6D28B00BA0E56 /* PersonInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoView.swift; sourceTree = "<group>"; };
 		D8C35FD02AD6D3FA00BA0E56 /* PersonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
 		D8E0FDDB2AD70CD800A428BD /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -112,6 +126,7 @@
 		D8388D122AD413EC0038A92E /* PhyDoc_Task */ = {
 			isa = PBXGroup;
 			children = (
+				D88659F22ADB05CF00031310 /* Extensions */,
 				D8E142232AD9BBCD000DF49D /* ViewModel */,
 				D8E142222AD9BBC2000DF49D /* Networking */,
 				D8ED64A42AD9A925006FADFC /* Models */,
@@ -131,6 +146,14 @@
 				D8388D1A2AD413ED0038A92E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D88659F22ADB05CF00031310 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8984EF32ADAB5CE00CD65D1 /* TimeSlotDateFormatter.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D8E142222AD9BBC2000DF49D /* Networking */ = {
@@ -165,12 +188,16 @@
 		D8ED64A32AD9A871006FADFC /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				D88659EC2ADAE00800031310 /* DoctorInfoView.swift */,
+				D8984EF12ADA9EC700CD65D1 /* ShowMoreButton.swift */,
 				D8388D272AD46D0D0038A92E /* GoToNextPageButton.swift */,
 				D8E0FDDB2AD70CD800A428BD /* BackButton.swift */,
+				D88659EE2ADAE53700031310 /* OrderDetailsView.swift */,
 				D8FD50E22AD51ECF00772735 /* LargeHeaderView.swift */,
 				D81C65E52AD59D42006CEC3B /* CustomPickerView.swift */,
 				D8C35FCE2AD6D28B00BA0E56 /* PersonInfoView.swift */,
 				D8ED64A02AD9A09F006FADFC /* DismissButtonView.swift */,
+				D88659F02ADAFBA100031310 /* FinalButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -178,6 +205,8 @@
 		D8ED64A42AD9A925006FADFC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D88659F52ADB083300031310 /* FinalMessage.swift */,
+				D88659F32ADB060400031310 /* Appointment.swift */,
 				D8E1421C2AD9B586000DF49D /* TimeSlots.swift */,
 				D8C35FD02AD6D3FA00BA0E56 /* PersonData.swift */,
 			);
@@ -266,18 +295,25 @@
 				D8388D262AD42CE00038A92E /* OrderTimeView.swift in Sources */,
 				D8ED64A12AD9A09F006FADFC /* DismissButtonView.swift in Sources */,
 				D8388D282AD46D0D0038A92E /* GoToNextPageButton.swift in Sources */,
+				D88659F62ADB083300031310 /* FinalMessage.swift in Sources */,
 				D8388D222AD422AA0038A92E /* OrderFormatView.swift in Sources */,
+				D8984EF42ADAB5CE00CD65D1 /* TimeSlotDateFormatter.swift in Sources */,
 				D81C65E62AD59D42006CEC3B /* CustomPickerView.swift in Sources */,
 				D8E0FDDC2AD70CD800A428BD /* BackButton.swift in Sources */,
 				D8FD50E32AD51ECF00772735 /* LargeHeaderView.swift in Sources */,
+				D88659F42ADB060400031310 /* Appointment.swift in Sources */,
 				D8E1421F2AD9B5CA000DF49D /* APICaller.swift in Sources */,
 				D8ED64A82AD9AC47006FADFC /* FinalView.swift in Sources */,
 				D8ED64A62AD9AC28006FADFC /* OrderPaymentView.swift in Sources */,
+				D8984EF22ADA9EC700CD65D1 /* ShowMoreButton.swift in Sources */,
 				D8C35FCF2AD6D28B00BA0E56 /* PersonInfoView.swift in Sources */,
 				D8E1421D2AD9B586000DF49D /* TimeSlots.swift in Sources */,
 				D8C35FD12AD6D3FA00BA0E56 /* PersonData.swift in Sources */,
+				D88659F12ADAFBA100031310 /* FinalButton.swift in Sources */,
 				D8388D242AD4231A0038A92E /* OrderPersonView.swift in Sources */,
+				D88659ED2ADAE00800031310 /* DoctorInfoView.swift in Sources */,
 				D8112F8A2AD8EE6900601215 /* HomePageView.swift in Sources */,
+				D88659EF2ADAE53700031310 /* OrderDetailsView.swift in Sources */,
 				D8388D142AD413EC0038A92E /* PhyDoc_TaskApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,13 +1,7 @@
-//
-//  PersonInfoView.swift
-//  PhyDoc_Task
-//
-//  Created by ZhZinekenov on 11.10.2023.
-//
-
 import SwiftUI
 
 struct PersonInfoView: View {
+    @Binding var isNextActionAllowed: Bool
     var profileData: PersonData
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -93,6 +87,8 @@ struct PersonInfoFillingView: View {
     @Binding var IIN: String
     @Binding var phoneNumber: String
     @Binding var address: String
+    @Binding var isNextActionAllowed: Bool
+    @Binding var isNextTapped: Bool
     
     @State private var showAlert = false
     @State private var alertMessage = ""
@@ -121,6 +117,9 @@ struct PersonInfoFillingView: View {
             
             TextField("Введите ИИН человека", text: $IIN)
                 .textFieldStyle(CustomRoundedTextFieldStyle())
+                .onSubmit {
+                    validateInput()
+                }
         }
         .padding(.bottom, 16)
         
@@ -134,6 +133,9 @@ struct PersonInfoFillingView: View {
             
             TextField("Введите номер телефона", text: $phoneNumber)
                 .textFieldStyle(CustomRoundedTextFieldStyle())
+                .onSubmit {
+                    validateInput()
+                }
         }
         .padding(.bottom, 16)
         
@@ -147,41 +149,25 @@ struct PersonInfoFillingView: View {
             
             TextField("Адрес прописки", text: $address)
                 .textFieldStyle(CustomRoundedTextFieldStyle())
+                .onSubmit {
+                    validateInput()
+                }
         }
         .padding(.bottom, 16)
-        .onDisappear {
-            validateInput()
+        
+        
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Ошибка в заполнении."), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
     }
     
-    private func validateInput() {
-        validateFullName()
-        validateIIN()
-        validatePhoneNumber()
-        // No validation for address as it can be any string
-    }
-    
-    private func validateFullName() {
-        let words = fullName.split(separator: " ")
-        if words.count != 2 {
-            // Invalid full name format
-            // Handle the error, e.g., show an alert or update a validation message
+    func validateInput() {
+        if fullName.isEmpty || IIN.isEmpty || phoneNumber.isEmpty || address.isEmpty {
+            showAlert = true
+            alertMessage = "Пожалуйста проверьте все поля."
+        } else {
+            isNextActionAllowed = true
         }
-    }
-    
-    private func validateIIN() {
-        if IIN.count != 12 || !IIN.allSatisfy(\.isNumber) {
-            // Invalid IIN format
-            // Handle the error, e.g., show an alert or update a validation message
-        }
-    }
-    
-    private func validatePhoneNumber() {
-        let phoneRegex = "^\\+7\\s\\d{3}\\s\\d{3}\\s\\d{2}\\s\\d{2}$"
-        let phonePredicate = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
-        if !phonePredicate.evaluate(with: phoneNumber) {
-            // Invalid phone number format
-            // Handle the error, e.g., show an alert or update a validation message
-        }
+        
     }
 }

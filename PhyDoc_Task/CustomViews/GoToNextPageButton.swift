@@ -1,15 +1,11 @@
-//
-//  GoToNextPageButton.swift
-//  PhyDoc_Task
-//
-//  Created by ZhZinekenov on 09.10.2023.
-//
+
 import SwiftUI
 import Foundation
 
 struct GoToNextPageButton: View {
     @Binding var isNextActionAllowed: Bool
     @Binding var isTapped: Bool
+    var action: () -> Void
     var body: some View {
         Button {
             if isNextActionAllowed {

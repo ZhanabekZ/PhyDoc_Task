@@ -1,9 +1,4 @@
-//
-//  BackButton.swift
-//  PhyDoc_Task
-//
-//  Created by ZhZinekenov on 11.10.2023.
-//
+
 
 import SwiftUI
 

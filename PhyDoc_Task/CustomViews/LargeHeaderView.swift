@@ -1,9 +1,4 @@
-//
-//  LargeHeaderView.swift
-//  PhyDoc_Task
-//
-//  Created by ZhZinekenov on 10.10.2023.
-//
+
 
 import SwiftUI
 

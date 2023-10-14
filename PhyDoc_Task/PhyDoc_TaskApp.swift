@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct PhyDoc_TaskApp: App {
+    @StateObject private var viewModel = ViewModel()
     var body: some Scene {
         WindowGroup {
             HomePageView()
+                .environmentObject(viewModel)
         }
     }
 }

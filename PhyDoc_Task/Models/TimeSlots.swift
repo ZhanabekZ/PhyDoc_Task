@@ -4,13 +4,13 @@
 import Foundation
 
 // MARK: - TimeSlots
-struct TimeSlots: Codable {
-    let slots: [Slot]?
+struct TimeSlots: Codable, Hashable {
+    let slots: [Slot]
 }
 
 // MARK: - Slot
-struct Slot: Codable {
-    let id: Int?
+struct Slot: Codable, Hashable, Identifiable {
+    let id: Int
     let datetime: String?
-    let price: Int?
+    let price: Int
 }

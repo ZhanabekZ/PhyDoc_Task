@@ -1,9 +1,3 @@
-//
-//  OrderPersonView.swift
-//  PhyDoc_Task
-//
-//  Created by ZhZinekenov on 09.10.2023.
-//
 
 import SwiftUI
 
@@ -16,10 +10,12 @@ struct OrderPersonView: View {
     @State private var isAnyOptionSelected = true
     @State private var isNextButtonTapped = false
     @State private var isDismissed = false
-
+    
+    
+    
     @State private var selectedPersonTag = 0
     
-    private let samplePersonData = PersonData(fullName: "Иванов Иван", IIN: "041115486195", phoneNumber: "+7 707 748 4815", address: "ул. Гани Иляева 15")
+    let samplePersonData = PersonData(fullName: "Иванов Иван", IIN: "041115486195", phoneNumber: "+7 707 748 4815", address: "ул. Гани Иляева 15")
     
     var body: some View {
         NavigationStack {
@@ -36,25 +32,40 @@ struct OrderPersonView: View {
                 CustomPickerView(isNextActionAllowed: $isAnyOptionSelected, selectedTag: $selectedPersonTag)
                     .padding(.bottom, 14)
                 if selectedPersonTag == 0 {
-                    PersonInfoView(profileData: samplePersonData)
+                    PersonInfoView(isNextActionAllowed: $isAnyOptionSelected, profileData: samplePersonData)
                 } else {
-                    PersonInfoFillingView(fullName: $fullName, IIN: $IIN, phoneNumber: $phoneNumber, address: $address)
+                    PersonInfoFillingView(fullName: $fullName, IIN: $IIN, phoneNumber: $phoneNumber, address: $address, isNextActionAllowed: $isAnyOptionSelected, isNextTapped: $isNextButtonTapped)
                 }
             }
             Spacer()
             HStack {
                 BackButton(tapped: $isBackButtonTapped)
-                GoToNextPageButton(isNextActionAllowed: $isAnyOptionSelected, isTapped: $isNextButtonTapped)
+                GoToNextPageButton(isNextActionAllowed: $isAnyOptionSelected, isTapped: $isNextButtonTapped) {
+                    if selectedPersonTag == 0 {
+                        UserDefaults.standard.setValue(samplePersonData.fullName, forKey: "orderPersonName")
+                    } else {
+                        UserDefaults.standard.setValue(fullName, forKey: "orderPersonName")
+                    }
+                }
             }
             
             .navigationDestination(isPresented: $isNextButtonTapped) {
-                OrderTimeView()
+                OrderTimeView().environmentObject(ViewModel())
             }
             .navigationDestination(isPresented: $isBackButtonTapped) {
                 OrderFormatView()
+            }
+            .navigationDestination(isPresented: $isDismissed) {
+                HomePageView()
             }
             .navigationBarBackButtonHidden()
         }
     }
 }
 
+struct OrderPersonView_Previews: PreviewProvider {
+    static var previews: some View {
+OrderPersonView()
+        
+    }
+}
