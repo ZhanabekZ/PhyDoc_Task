@@ -1,5 +1,6 @@
 # PhyDoc_Task
 Reservation functionality for MedTech startup using GET and POST requests from API. 
+
 <img src = "https://github.com/ZhanabekZ/PhyDoc_Task/assets/88929831/9505afa3-da2c-42b0-bfed-3766de6a1d5a" width="230px">
 &nbsp &nbsp &nbsp
 <img src = "https://github.com/ZhanabekZ/PhyDoc_Task/assets/88929831/09002ab0-3836-4063-99b9-da0db52b0ad4" width="230px">
